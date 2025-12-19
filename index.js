@@ -3,12 +3,20 @@ require("dotenv").config();
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Hello world home page");
+app.get("/book/:source-:destination", (req, res) => {
+  res.send(`${req.params.source} to ${req.params.destination} `);
 });
 
-app.get("/students", (req, res) => {
-  res.send("Hello world students");
+app.get("/student/:enrollment", (req, res) => {
+  res.send("Mobile Number: {mobile}");
+});
+
+app.all(/.*/, (req, res) => {
+  const data = {
+    error: "no route matching with given path",
+    message: "asdfasdf ",
+  };
+  res.status(404).send(data);
 });
 
 app.listen(process.env.PORT, () => {
