@@ -6,9 +6,9 @@ const app = express();
 app.get("/book/:source-:destination", (req, res) => {
   res.send(`${req.params.source} to ${req.params.destination} `);
 });
-
+mobile = 787787888
 app.get("/student/:enrollment", (req, res) => {
-  res.send("Mobile Number: {mobile}");
+  res.send(`Mobile Number: ${mobile}`);
 });
 
 app.all(/.*/, (req, res) => {
