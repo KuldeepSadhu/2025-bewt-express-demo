@@ -13,10 +13,10 @@ app.get("/student/:enrollment", (req, res) => {
 
 app.all(/.*/, (req, res) => {
   const data = {
-    error: "no route matching with given path",
+    error: "no route matching   with given path",
     message: "asdfasdf ",
   };
-  res.status(404).send(data);
+  res.status(400).send(data);
 });
 
 app.listen(process.env.PORT, () => {
